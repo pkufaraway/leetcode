@@ -11,8 +11,8 @@ class Solution {
             return false;
         }
         char[] s = String.valueOf(x).toCharArray();
-        for(int i = 0; i < s.length/2; i++) {
-            if(s[i] != s[s.length-i-1]) {
+        for (int i = 0; i < s.length / 2; i++) {
+            if (s[i] != s[s.length - i - 1]) {
                 return false;
             }
         }

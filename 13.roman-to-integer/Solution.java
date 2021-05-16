@@ -13,6 +13,7 @@ import java.util.HashMap;
 // @lc code=start
 class Solution {
     private static Map<Character, Integer> values;
+
     public int romanToInt(String s) {
         values = new HashMap<>();
         int result = 0;
@@ -25,14 +26,14 @@ class Solution {
         values.put('C', 100);
         values.put('D', 500);
         values.put('M', 1000);
-        for(int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             preValue = v;
             v = values.get(s.charAt(i));
-            if(i == 0) {
+            if (i == 0) {
                 tempValue += v;
                 continue;
             }
-            if(v > preValue) {
+            if (v > preValue) {
                 result -= tempValue;
                 tempValue = v;
             } else if (v == preValue) {
@@ -43,7 +44,7 @@ class Solution {
             }
         }
         result += tempValue;
-        return result;        
+        return result;
     }
 }
 // @lc code=end
